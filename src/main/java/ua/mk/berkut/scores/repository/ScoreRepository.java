@@ -7,5 +7,5 @@ import ua.mk.berkut.scores.entity.Subject;
 import java.util.List;
 
 public interface ScoreRepository extends JpaRepository<Score, Integer> {
-    List<Score> findByScoreContainingIgnoreCase(String name);
+
 }

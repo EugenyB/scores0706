@@ -3,6 +3,8 @@ package ua.mk.berkut.scores.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ua.mk.berkut.scores.converter.SubjectConverter;
+import ua.mk.berkut.scores.dto.SubjectDto;
 import ua.mk.berkut.scores.entity.Subject;
 import ua.mk.berkut.scores.service.SubjectService;
 
@@ -13,10 +15,11 @@ import java.util.List;
 @RequestMapping("/api/subjects")
 class SubjectController {
     private final SubjectService subjectService;
+    private final SubjectConverter subjectConverter;
 
     @GetMapping
-    public List<Subject> getAllSubjects() {
-        return subjectService.getAllSubjects();
+    public List<SubjectDto> getAllSubjects() {
+        return subjectConverter.convertToDto(subjectService.getAllSubjects());
     }
 
     @GetMapping("/{id}")

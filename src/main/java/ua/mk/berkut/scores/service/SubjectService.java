@@ -2,9 +2,10 @@ package ua.mk.berkut.scores.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import ua.mk.berkut.scores.repository.SubjectRepository;
 import ua.mk.berkut.scores.entity.Subject;
-import jakarta.persistence.EntityNotFoundException;
+
 
 import java.util.List;
 
